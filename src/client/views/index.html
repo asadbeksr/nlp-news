@@ -19,7 +19,7 @@
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="name" type="text" name="input" value="" placeholder="Name">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
             <section>
@@ -36,12 +36,12 @@
 
         <script>
             // Check that service workers are supported
-            if ('serviceWorker' in navigator) {
+           // if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
-                });
-            }
+             //   window.addEventListener('load', () => {
+            //        navigator.serviceWorker.register('/service-worker.js');
+            //    });
+          //  }
         </script>
     </body>
 </html>
