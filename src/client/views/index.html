@@ -1,47 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>NLP API</title>
-        </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>Sentiment Analyzer</title>
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,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">
+</head>
 
-        <header>
-            <div class="">
-                NLP
+<body>
+
+    <header>
+        <div class="">
+            Sentiment Analysis
+        </div>
+        <div class="">
+            v 2.1
+        </div>
+    </header>
+
+    <main>
+
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <input id="url" type="text" name="input" value="" placeholder="Type URL for Article">
+                <input type="submit" name="" value="Analyze" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return handleSubmit(event)">
+            </form>
+        </section>
+
+        <section>
+            <strong>Form Results:</strong>
+            <div class="results">
+                <div id="polarity" class="res"></div>
+                <div id="agreement" class="res"></div>
+                <div id="subjectivity" class="res"></div>
+                <div id="confidence" class="res"></div>
+                <div id="irony" class="res"></div>
+                <div id="lang" class="res"></div>
             </div>
-            <div class="">
-                Menu
-            </div>
-        </header>
+        </section>
+    </main>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            <section>
+    <footer>
+        <p>2021 by <a href="https://www.github.com/bekdevuz" target="_blank">bekdev</a></p>
+    </footer>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
+    <script>
+        // Check that service workers are supported
+        //  if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        //       window.addEventListener('load', () => {
+        //       navigator.serviceWorker.register('/service-worker.js');
+        //        });
+        //      }
+    </script>
+</body>
 
-        <footer>
-            <p>2021 by bekdev </p>
-        </footer>
-
-        <script>
-            // Check that service workers are supported
-           // if ('serviceWorker' in navigator) {
-                // Use the window load event to keep the page load performant
-             //   window.addEventListener('load', () => {
-            //        navigator.serviceWorker.register('/service-worker.js');
-            //    });
-          //  }
-        </script>
-    </body>
 </html>
