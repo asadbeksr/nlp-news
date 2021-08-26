@@ -1,4 +1,4 @@
-let polarity = document.getElementById('polarity')
+// results
 let agreement = document.getElementById('agreement')
 let subjectivity = document.getElementById('subjectivity')
 let confidence = document.getElementById('confidence');
@@ -13,11 +13,9 @@ function handleSubmit(event) {
     let textForm = document.getElementById('url').value
     if (Client.checkForUrl(textForm)) {
         console.log("::: Form Submitted :::")
-
         postParsedData('http://localhost:8081/sentimentApi', {
                 url: textForm
             })
-
             .then(function (res) {
                 agreement.innerHTML = `Agreement: ${res.agreement}`;
                 subjectivity.innerHTML = `Subjectivity: ${res.subjectivity}`;

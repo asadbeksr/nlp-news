@@ -22,8 +22,8 @@ app.use(express.static('dist'))
 //console.log(__dirname)
 
 // API
-const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
-const apiKey = process.env.API_KEY
+const baseUrl = 'https://api.meaningcloud.com/sentiment-2.1?'
+const Key = process.env.API_KEY
 let userURL = []
 
 app.get('/', function (req, res) {
@@ -38,9 +38,9 @@ app.get('/test', function (req, res) {
 */
 
 // POST Route
-app.post('/sentimentApi', async function (req, res) {
+app.post('/sentimentApi', async  (req, res) => {
     userURL = req.body.url;
-    const apiURL = `${baseURL}key=${apiKey}&url=${userURL}&lang=en`
+    const apiURL = `${baseUrl}key=${Key}&url=${userURL}&lang=en`
     const response = await fetch(apiURL)
     const userData = await response.json()
     res.send(userData)
