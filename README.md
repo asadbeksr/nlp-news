@@ -26,8 +26,24 @@ Make sure Node and npm are installed from the terminal.
 
 `git clone <repository>` 
 
-2.`cd` into project folder and run:
+2. `cd` into project folder and run:
 - ```npm install```
+3. Install loaders and plugins
+
+npm i -D @babel/core @babel/preset-env babel-loader
+npm i -D style-loader node-sass css-loader sass-loader
+npm i -D clean-webpack-plugin
+npm i -D html-webpack-plugin
+npm i -D mini-css-extract-plugin
+npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
+
+4. Get your API key from https://meaningcloud.com
+    
+   create `.env` file and 
+
+   replace start with your API key `API_KEY = ***********************`
+
+   
 - ```npm start``` to start the app
 - this app runs on localhost:8080, but you can of course edit that in server.js
 
