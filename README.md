@@ -39,7 +39,7 @@ npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin```
 
 4. Get your API key from https://meaningcloud.com
     
-    create file 
+    create env file 
 ``` 
     .env 
 ```
@@ -49,8 +49,12 @@ npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin```
 ```
 5. Run webpack 
 
-```npm run prod```
-```npm start```
+```
+    npm run prod
+```
+```
+    npm start
+```
   
    To start project on localhost//8081
 
