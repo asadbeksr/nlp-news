@@ -1,11 +1,14 @@
-// Import the js to test
-import { handleSubmit } from "../js/formHandler"
+// https://knowledge.udacity.com/questions/174638
 
-//references 
-// https://jestjs.io/docs/getting-started
-//
+import "babel-polyfill";
+import { handleSubmit } from '../js/formHandler';
 
 
-test('Testing the function', () => {
-    expect(handleSubmit).toBeInstanceOf(Function);
-})
+
+test("asyncFunction", () => {
+    handleSubmit();
+    expect.assertions(1);
+    function handleSubmit(data) {
+      expect(data).toBeUndefined();
+    }
+  });
