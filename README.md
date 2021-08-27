@@ -41,16 +41,16 @@ npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin```
     
     create file 
 ``` 
-.env 
+    .env 
 ```
     and replace stars with your API key     
 ```
-API_KEY = ***********************
+    API_KEY = ***********************
 ```
 5. Run webpack 
 
- `npm run prod`
-  `npm start`
+```npm run prod```
+```npm start```
   
    To start project on localhost//8081
 
